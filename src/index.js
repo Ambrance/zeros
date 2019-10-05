@@ -31,22 +31,17 @@ module.exports = function zeros(expression) {
       }
       el -= shift;
     }
-    console.log(zerosObj);
   }
 
   let part1Arr = removeSigns(doubleFactorialArray);
   let part2Arr = removeSigns(singleFactorialArray);
-  console.log(part1Arr, part2Arr);
   let zerosCount = function() {
-    if (part1Arr.length > 0) {
-      part1Arr.map(function(el) {
-        findZeros(el, 2, 2), findZeros(el, 2, 5);
-      });
-    } else if (part2Arr.length > 0) {
-      part2Arr.map(function(el) {
-        findZeros(el, 1, 5), findZeros(el, 1, 2);
-      });
-    }
+    part1Arr.map(function(el) {
+      findZeros(el, 2, 2), findZeros(el, 2, 5);
+    });
+    part2Arr.map(function(el) {
+      findZeros(el, 1, 5), findZeros(el, 1, 2);
+    });
     return Math.min(zerosObj.zerosTwo, zerosObj.zerosFive);
   };
   return zerosCount();
